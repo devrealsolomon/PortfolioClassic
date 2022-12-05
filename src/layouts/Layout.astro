@@ -1,0 +1,53 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <script
+      src="https://kit.fontawesome.com/5d11b56c09.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <slot />
+    <style>
+      :root {
+        --color-text: #fff;
+        --color-bg: #161616;
+      }
+      *::-webkit-scrollbar {
+        width: 10px;
+        background-color: #0b1120;
+      }
+      *::-webkit-scrollbar-track {
+        background-color: #e2e8f0;
+      }
+      *::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: #94a3b8;
+      }
+
+      html {
+        font-family: "Poppins", sans-serif;
+        color: var(--color-text);
+        background-color: var(--color-bg);
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>
